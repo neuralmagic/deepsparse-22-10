@@ -1,0 +1,25 @@
+#!/bin/sh
+#
+# Configured as part of the DigitalOcean 1-Click Image build process
+
+myip=$(hostname -I | awk '{print$1}')
+cat <<EOF
+********************************************************************************
+
+Please read the instructions at
+https://marketplace.digitalocean.com/apps/deepsparse
+
+The Neural Magic team provides multiple channels for customers to get help with 
+our product and find answers. Users may browse our documentation 
+( https://docs.neuralmagic.com ) to learn more about DeepSparse 
+or post questions, bugs, and feature requests 
+( https://github.com/neuralmagic/deepsparse/issues ) via our issue queue. 
+Additionally, anyone can interact with other DeepSparse users and staff 
+via the Neural Magic Community ( https://discuss.neuralmagic.com ). 
+For options on contract or Enterprise Support, 
+please reach out to Neural Magic Sales 
+( https://neuralmagic.com/deepsparse/#form ) with any questions.
+
+********************************************************************************
+To delete this message of the day: rm -rf $(readlink -f ${0})
+EOF
