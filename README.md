@@ -6,6 +6,12 @@
 
 ## Installing Packages for App Creation
 
+
+
+
+
+
+
 To install `make` and `Packer` on Ubuntu, you can follow the steps below:
 
 **Installing make:**
@@ -78,6 +84,16 @@ To create a DigitalOcean personal access token and set it to the `DIGITALOCEAN_A
    ```
 
 10. The `DIGITALOCEAN_API_TOKEN` environment variable is now set, and you can use it in your Packer configuration or any other scripts that interact with the DigitalOcean API.
+
+## Installing Doctl - CLI SDK
+
+This [flow ](https://docs.digitalocean.com/reference/doctl/how-to/install/)installs Doctl for WSL Ubuntu. For Ubuntu not installed on WSL, use this [flow](https://docs.digitalocean.com/reference/doctl/how-to/install/).
+
+Afterwards, connect with DigitalOcean by passing in your Personal Access Token:
+
+```bash
+doctl auth init --access-token YOUR_API_TOKEN
+```
 
 ## Build Automation with Packer
 
