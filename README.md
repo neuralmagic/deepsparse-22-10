@@ -1,3 +1,5 @@
+**README for internal purposes only during testing prior to publishing.**
+
 # Questions for Michael:
 
 1. what version of deepsparse should we use? 1.4.2 like GCP marketplace?

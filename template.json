@@ -11,7 +11,7 @@
     {
       "type": "digitalocean",
       "api_token": "{{user `do_api_token`}}",
-      "image": "ubuntu-22-04-x64",
+      "image": "python:3.8.16-slim-bullseye@sha256:322e38e3056cf87280ad80be615a6282aae768090f30d43d99abe413e1dd081a",
       "region": "nyc3",
       "size": "s-1vcpu-1gb",
       "ssh_username": "root",
