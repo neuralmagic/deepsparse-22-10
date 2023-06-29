@@ -99,6 +99,19 @@ doctl auth init --access-token YOUR_API_TOKEN
 
 [Packer](https://www.packer.io/intro) is a tool for creating images from a single source configuration. Using this Packer template reduces the entire process of creating, configuring, validating, and snapshotting a build Droplet to a single command:
 
+Install Repo
+
+```bash
+git clone https://github.com/neuralmagic/deepsparse-22-04.git
+cd deepsparse-22-04
+```
+Initialize DigitalOcean as a builder:
+
+```bash
+packer init ./config.pkr.hcl
+```
+Now build image:
+
 ```
 packer build template.json
 ```

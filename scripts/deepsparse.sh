@@ -1,13 +1,13 @@
 #!/bin/bash
 
-VENV="/venv"
+# VENV="/venv"
 
-set -Eeuxo \
-    && apt-get update \
-    && apt-get install ffmpeg libsm6 libxext6 -y \
-    && DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends git \
-    && python3.8 -m venv $VENV \
-    && $VENV/bin/pip install --no-cache-dir --upgrade pip setuptools wheel
+# set -Eeuxo \
+#     && apt-get update \
+#     && apt-get install ffmpeg libsm6 libxext6 -y \
+#     && DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends git \
+#     && python3.8 -m venv $VENV \
+#     && $VENV/bin/pip install --no-cache-dir --upgrade pip setuptools wheel
 
 
 # Create the deepsparse user
@@ -22,4 +22,4 @@ chown -R deepsparse: /home/deepsparse
 chmod 755 /home/deepsparse
 
 # Install DeepSparse
-python3 -m pip install deepsparse[server,yolo,onnxruntime,yolov8,transformers,image_classification]
+python3 -m pip install --no-cache-dir --upgrade pip setuptools wheel deepsparse[server,yolo,onnxruntime,yolov8,transformers,image_classification]
