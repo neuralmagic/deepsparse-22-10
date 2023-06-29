@@ -105,3 +105,33 @@ Now build image:
 ```
 packer build template.json
 ```
+
+This command will build an image with DeepSparse, run a few health checks for marketplace integration which are found in the `scripts` directory and save the image as a snapshot onto your DO account.
+
+## Smoke Test
+
+Before starting make sure you have an [SSH key](https://docs.digitalocean.com/products/droplets/how-to/add-ssh-keys/create-with-openssh/) with your DO account.
+
+**TIP**: to find a list of SSH fingerprints run:
+
+```bash
+doctl compute ssh-key list
+```
+
+Run the following command to get a list of snapshots in order to obtain the ID of our newly built image:
+
+```bash
+doctl compute snapshot list
+```
+Finally, pass the Snapshot-ID and your SSH fingerprint into the following command to create a Droplet using a compute optimized instance:
+
+```bash
+doctl compute droplet create deepsparse-droplet --image <SNAPSHOT-ID> --region nyc3 --size c-4-intel --ssh-keys <FINGERPRINT>
+```
+
+
+
+
+
+
+
