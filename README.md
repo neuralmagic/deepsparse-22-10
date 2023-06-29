@@ -2,12 +2,6 @@
 
 ## Installing Packages for App Creation
 
-
-
-
-
-
-
 To install `make` and `Packer` on Ubuntu, you can follow the steps below:
 
 **Installing make:**
@@ -98,8 +92,8 @@ doctl auth init --access-token YOUR_API_TOKEN
 Install Repo
 
 ```bash
-git clone https://github.com/neuralmagic/deepsparse-22-04.git
-cd deepsparse-22-04
+git clone https://github.com/neuralmagic/deepsparse-22-10.git
+cd deepsparse-22-10
 ```
 Initialize DigitalOcean as a builder:
 
