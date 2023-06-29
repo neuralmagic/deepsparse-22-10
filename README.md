@@ -123,7 +123,7 @@ Run the following command to get a list of snapshots in order to obtain the ID o
 ```bash
 doctl compute snapshot list
 ```
-Finally, pass the Snapshot-ID and your SSH fingerprint into the following command to create a Droplet using a compute optimized instance:
+Finally, pass the `Snapshot-ID` and your `SSH fingerprint` into the following command to create a Droplet using a compute optimized instance:
 
 ```bash
 doctl compute droplet create deepsparse-droplet --image <SNAPSHOT-ID> --region nyc3 --size c-4-intel --ssh-keys <FINGERPRINT>
