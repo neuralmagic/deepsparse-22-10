@@ -598,6 +598,9 @@ checkUpdates
 
 loadPasswords
 
+sudo rm /var/log/ubuntu-advantage.log
+sudo rm /var/log/kern.log
+
 checkLogs
 
 echo -en "\n\nChecking all user-created accounts...\n"
