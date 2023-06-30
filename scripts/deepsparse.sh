@@ -14,6 +14,7 @@ chmod 755 /home/deepsparse
 # Install DeepSparse
 python3 -m pip install --no-cache-dir --upgrade pip setuptools wheel deepsparse[server,yolo,onnxruntime,yolov8,transformers,image_classification]
 
+# Enable firewall 
 echo "y" | ufw enable
 ufw allow ssh
 ufw allow http
