@@ -1,4 +1,4 @@
-**README for internal purposes only during testing prior to publishing.**
+**README for internal purposes only during testing.**
 
 ## Installing Packages for App Creation
 
@@ -13,8 +13,6 @@ To install `make` and `Packer` on Ubuntu, you can follow the steps below:
    sudo apt update
    sudo apt install make
    ```
-
-3. The `make` package will be installed on your system.
 
 **Installing Packer:**
 
@@ -118,20 +116,87 @@ Before starting make sure you have an [SSH key](https://docs.digitalocean.com/pr
 doctl compute ssh-key list
 ```
 
-Run the following command to get a list of snapshots in order to obtain the ID of our newly built image:
+Run the following command to get a list of snapshots in order to obtain the ID of the newly built image:
 
 ```bash
 doctl compute snapshot list
 ```
-Finally, pass the `Snapshot-ID` and your `SSH fingerprint` into the following command to create a Droplet using a compute optimized instance:
+Finally, pass the `Snapshot-ID` of image and the SSH `fingerprint` into the following command to create a Droplet using a compute optimized instance:
+
+*(FYI the region where the snapshot is saved, needs to be the same as the region where the droplet is created, which in this example was `nyc3`)*
 
 ```bash
 doctl compute droplet create deepsparse-droplet --image <SNAPSHOT-ID> --region nyc3 --size c-4-intel --ssh-keys <FINGERPRINT>
 ```
 
+After staging, SSH into Droplet.
 
+**TIP**: To find the IP address of the droplet, run the following commmand:
 
+```bash
+doctl compute droplet list
+```
+Now, pass the IP and SSH into the droplet:
+```bash
+ssh root@<IP-ADDRESS>
+```
 
+**NLP Benchmark example**:
 
+```bash
+deepsparse.benchmark zoo:nlp/question_answering/bert-base/pytorch/huggingface/squad/pruned95_obs_quant-none -i [64,128] -b 64 -nstreams 1 -s sync
+```
 
+**CV Server example**:
 
+```bash
+deepsparse.server \
+    task image_classification \
+    --model_path "zoo:cv/classification/resnet_v1-50/pytorch/sparseml/imagenet/pruned95-none" \
+    --port 5543
+```
+
+After server is up and running pass in our droplet's IP address and default port number (5543) to the ip address to check out the swagger on:
+
+```
+http://<IP-ADDRESS@5543/docs
+```
+**NLP Inline Python example**:
+
+open Python in shell:
+
+```bash
+python3
+```
+
+paste the following code snippet:
+
+```python
+from deepsparse import Pipeline
+
+qa_pipeline = Pipeline.create(task="question-answering")
+inference = qa_pipeline(question="What's my name?", context="My name is Snorlax")
+print(inference)
+```
+
+**CV Inline Python example**:
+
+Get an example image:
+
+```bash
+wget -O basilica.jpg https://raw.githubusercontent.com/neuralmagic/deepsparse/main/src/deepsparse/yolo/sample_images/basilica.jpg
+```
+
+Run inference:
+
+```python
+from deepsparse import Pipeline
+
+model_path = "zoo:cv/detection/yolov8-s/pytorch/ultralytics/coco/pruned50_quant-none" 
+images = ["basilica.jpg"]
+yolo_pipeline = Pipeline.create(
+    task="yolov8",
+    model_path=model_path,
+)
+pipeline_outputs = yolo_pipeline(images=images)
+```

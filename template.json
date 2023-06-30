@@ -2,7 +2,7 @@
   "variables": {
     "do_api_token": "{{env `DIGITALOCEAN_API_TOKEN`}}",
     "image_name": "deepsparse-22-10-snapshot-{{timestamp}}",
-    "apt_packages": "python3-pip python3-dev build-essential libssl-dev libffi-dev python3-setuptools",
+    "apt_packages": "python3-pip python3-dev build-essential libssl-dev libffi-dev python3-setuptools ffmpeg libsm6 libxext6",
     "application_name": "DeepSparse"
   },
   "sensitive-variables": ["do_api_token"],
