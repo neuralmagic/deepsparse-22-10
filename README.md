@@ -158,7 +158,7 @@ deepsparse.server \
     --port 5543
 ```
 
-After server is up and running pass in our droplet's IP address and default port number (5543) to the ip address to check out the swagger on:
+After server is up and running pass in our droplet's IP address and default port number (5543) to the URL to check out swagger:
 
 ```
 http://<IP-ADDRESS@5543/docs
