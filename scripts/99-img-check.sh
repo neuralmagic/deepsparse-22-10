@@ -600,6 +600,7 @@ loadPasswords
 
 sudo rm /var/log/ubuntu-advantage.log
 sudo rm /var/log/kern.log
+sudo rm /var/log/auth.log
 
 checkLogs
 

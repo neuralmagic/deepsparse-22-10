@@ -140,12 +140,14 @@ Now, pass the IP and SSH into the droplet:
 ```bash
 ssh root@<IP-ADDRESS>
 ```
+---
 
 **NLP Benchmark example**:
 
 ```bash
 deepsparse.benchmark zoo:nlp/question_answering/bert-base/pytorch/huggingface/squad/pruned95_obs_quant-none -i [64,128] -b 64 -nstreams 1 -s sync
 ```
+---
 
 **CV Server example**:
 
@@ -161,6 +163,8 @@ After server is up and running pass in our droplet's IP address and default port
 ```
 http://<IP-ADDRESS@5543/docs
 ```
+---
+
 **NLP Inline Python example**:
 
 open Python in shell:
@@ -178,6 +182,7 @@ qa_pipeline = Pipeline.create(task="question-answering")
 inference = qa_pipeline(question="What's my name?", context="My name is Snorlax")
 print(inference)
 ```
+---
 
 **CV Inline Python example**:
 
@@ -199,4 +204,5 @@ yolo_pipeline = Pipeline.create(
     model_path=model_path,
 )
 pipeline_outputs = yolo_pipeline(images=images)
+print(pipeline_outputs)
 ```
