@@ -100,7 +100,7 @@ packer init ./config.pkr.hcl
 ```
 Now build image:
 
-```
+```bash
 packer build template.json
 ```
 
@@ -121,7 +121,7 @@ Run the following command to get a list of snapshots in order to obtain the ID o
 ```bash
 doctl compute snapshot list
 ```
-Finally, pass the `Snapshot-ID` of image and the SSH `fingerprint` into the following command to create a Droplet using a compute optimized instance:
+Finally, pass the `Snapshot-ID` of the DeepSparse image and the SSH `fingerprint` into the following command to create a Droplet using a compute optimized instance:
 
 *(FYI the region where the snapshot is saved, needs to be the same as the region where the droplet is created, which in this example was `nyc3`)*
 
@@ -136,7 +136,7 @@ After staging, SSH into Droplet.
 ```bash
 doctl compute droplet list
 ```
-Now, pass the IP and SSH into the droplet:
+Now, pass the IP address into the following command:
 ```bash
 ssh root@<IP-ADDRESS>
 ```
