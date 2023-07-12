@@ -20,3 +20,6 @@ ufw allow ssh
 ufw allow http
 ufw allow https
 ufw allow 5543 # for DeepSparse server
+
+# Enable execution of startup script
+chmod +x /etc/update-motd.d/99-one-click

@@ -1,0 +1,29 @@
+#!/bin/sh
+#
+# Configured as part of the DigitalOcean 1-Click Image build process
+
+myip=$(hostname -I | awk '{print$1}')
+cat <<EOF
+********************************************************************************
+
+██████╗ ███████╗███████╗██████╗ ███████╗██████╗  █████╗ ██████╗ ███████╗███████╗
+██╔══██╗██╔════╝██╔════╝██╔══██╗██╔════╝██╔══██╗██╔══██╗██╔══██╗██╔════╝██╔════╝
+██║  ██║█████╗  █████╗  ██████╔╝███████╗██████╔╝███████║██████╔╝███████╗█████╗  
+██║  ██║██╔══╝  ██╔══╝  ██╔═══╝ ╚════██║██╔═══╝ ██╔══██║██╔══██╗╚════██║██╔══╝  
+██████╔╝███████╗███████╗██║     ███████║██║     ██║  ██║██║  ██║███████║███████╗
+╚═════╝ ╚══════╝╚══════╝╚═╝     ╚══════╝╚═╝     ╚═╝  ╚═╝╚═╝  ╚═╝╚══════╝╚══════╝
+
+Welcome to DigitalOcean's 1-Click DeepSparse Droplet!
+
+To keep this Droplet secure, the UFW firewall is enabled.
+All ports are BLOCKED except for 22 (SSH), 80 (HTTP), 443 (HTTPS) and 5543 (DeepSparse Server).
+
+Review our documentation * https://docs.neuralmagic.com * to learn more about DeepSparse.
+
+For further support, join our Community Slack channel * https://discuss.neuralmagic.com * 
+For options on contract or Enterprise Support,  please reach out to Neural Magic Sales 
+( https://neuralmagic.com/deepsparse/#form ) with any questions.
+
+********************************************************************************
+To delete this message of the day: rm -rf $(readlink -f ${0})
+EOF
