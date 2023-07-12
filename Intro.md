@@ -100,5 +100,5 @@ deepsparse.server \
  curl -X POST -H "Content-Type: application/json" -d '{"sequences": "Hey @neuralmagic, DeepSparse is an an awesome piece of software!"}' http://localhost:5543/predict
 ```
 
-output: `{"labels":["LABEL_1"],"scores":[0.9884248375892639]}`
+output: `{"labels":["positive"],"scores":[0.9994332790374756]}`
 
