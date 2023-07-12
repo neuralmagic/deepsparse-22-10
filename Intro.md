@@ -35,7 +35,7 @@ wget -O basilica.jpg https://raw.githubusercontent.com/neuralmagic/deepsparse/ma
 
 ![](https://raw.githubusercontent.com/neuralmagic/deepsparse/main/src/deepsparse/yolo/sample_images/basilica.jpg)
 
-**Step 3** On your local machine, use the Python `requests` library to make an API request to receive YOLOv8's inference on what it "sees" in the picture and then use the `opencv-python` library to draw objects on our image using the following function:
+**Step 3** On your local machine, use the Python `requests` library to make an API request to receive YOLOv8's inference on what it "sees" in the picture and then use the `opencv-python` library to draw objects in our image to know which objects it identified:
 
 ```python
 import requests
