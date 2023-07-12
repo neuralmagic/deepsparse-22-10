@@ -17,7 +17,7 @@ Let's start using the [DeepSparse Server](https://github.com/neuralmagic/deepspa
 
 ### YOLOv8 for Image Detection
 
-Image detection is a common task from Computer Vision that focuses on finding and identifying specific objects or patterns within an image. It's like teaching a computer to "see" and recognize certain things in pictures. Let's say you have a photo that contains a cat, a dog, and a tree. Image detection would involve using a deep learning model to look at this photo and determine what objects are present.
+Image detection is a common task from Computer Vision that focuses on finding and identifying specific objects within an image. It's like teaching a computer to "see" and recognize certain things in pictures. Let's say you have a photo that contains a cat, a dog, and a tree. Image detection would involve using a deep learning model to look at this photo and determine what objects are present.
 
 For this task, we'll use a sparse YOLOv8, which is a state-of-the-art model for the image detection task.
 
@@ -77,7 +77,7 @@ Here are all the objects identified by the model found in the new `basilica_boxe
 
 ### BERT for Sentiment Analysis
 
-Sentiment analysis is a common task in Natural Language Processing that focuses on identifying and classifying opinions expressed in a piece of text. It's akin to teaching a computer to recognize various sentiments in written language. Imagine you're a business that receives thousands of social media comments and posts about your product every day. Sentiment analysis could involve training a machine learning model to process these social media interactions and determine the general sentiment towards your product—be it positive or negative.
+Sentiment analysis is a common task in Natural Language Processing that focuses on identifying and classifying opinions expressed in a piece of text. Imagine you're a business that receives thousands of social media comments and posts about your product every day. Sentiment analysis could involve using a machine learning model to process these social media interactions and determine the general sentiment towards your product — be it positive or negative.
 
 For this task, we'll use a sparse BERT model, which is a transformer model for the sentiment analysis task. The model was trained to classify text into 2 different sentiments: `positive` and `negative`. In addition, it also gives a score on how 'confident' the model is in its prediction.
 
