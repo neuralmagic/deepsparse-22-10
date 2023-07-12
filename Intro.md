@@ -1,3 +1,5 @@
+## Getting started after deploying DeepSparse Inference Runtime
+
 After the [DeepSparse One-Click Droplet](<https://github.com/neuralmagic/deepsparse/blob/b028422aff667487e973eb99418907b765d283f4/examples/do-marketplace/README.md>) is created, access your Droplet via SSH by using your Droplet's IP address:<br>
 
 `ssh root@<IP-ADDRESS> -L 5543:localhost:5543`
@@ -25,6 +27,11 @@ For this task, we'll use a sparse YOLOv8, which is a state-of-the-art model for 
 deepsparse.server \
   --task yolov8 \
   --model_path zoo:cv/detection/yolov8-s/pytorch/ultralytics/coco/pruned50_quant-none
+        class_names:
+        '0': person
+        '1': bicycle
+        '2': car
+        '3': motorcycle
 ```
 
 **Step 2** From your local machine's terminal, download an image 'basilica.jpg' into your working directory:
@@ -77,14 +84,14 @@ Here are all the objects identified by the model found in the new `basilica_boxe
 
 Sentiment analysis is a common task in Natural Language Processing that focuses on identifying and classifying opinions expressed in a piece of text. It's akin to teaching a computer to "understand" and recognize various sentiments in written language. Imagine you're a business that receives thousands of social media comments and posts about your product every day. Sentiment analysis could involve training a machine learning model to process these social media interactions and determine the general sentiment towards your product—be it positive or negative.
 
-For this task, we'll use a sparse BERT model, which is a transformer model for the sentiment analysis task. The model was trained to classify text into 2 different sentiments: if it predicts `LABEL_0`; the sentiment is negative, and if `LABEL_1`; the sentiment is positive. In addition, it also gives a score on how 'confident' the model is in its prediction.
+For this task, we'll use a sparse BERT model, which is a transformer model for the sentiment analysis task. The model was trained to classify text into 2 different sentiments: `positive` and `negative`. In addition, it also gives a score on how 'confident' the model is in its prediction.
 
 **Step 1** From your Droplet's terminal, initialize the DeepSparse Server with the BERT model:
 
 ```bash
 deepsparse.server \
   --task sentiment_analysis \
-  --model_path zoo:nlp/sentiment_analysis/bert-base/pytorch/huggingface/sst2/pruned80_quant-none-vnni
+  --model_path zoo:nlp/sentiment_analysis/obert-base/pytorch/huggingface/sst2/pruned90_quant-none
 ```
 
 **Step 2** On your local machine's terminal, use `curl` to make an API request to receive BERT's inference on the sentiment of a tweet:
