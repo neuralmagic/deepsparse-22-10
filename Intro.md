@@ -27,11 +27,6 @@ For this task, we'll use a sparse YOLOv8, which is a state-of-the-art model for 
 deepsparse.server \
   --task yolov8 \
   --model_path zoo:cv/detection/yolov8-s/pytorch/ultralytics/coco/pruned50_quant-none
-        class_names:
-        '0': person
-        '1': bicycle
-        '2': car
-        '3': motorcycle
 ```
 
 **Step 2** From your local machine's terminal, download an image 'basilica.jpg' into your working directory:
@@ -82,7 +77,7 @@ Here are all the objects identified by the model found in the new `basilica_boxe
 
 ### BERT for Sentiment Analysis
 
-Sentiment analysis is a common task in Natural Language Processing that focuses on identifying and classifying opinions expressed in a piece of text. It's akin to teaching a computer to "understand" and recognize various sentiments in written language. Imagine you're a business that receives thousands of social media comments and posts about your product every day. Sentiment analysis could involve training a machine learning model to process these social media interactions and determine the general sentiment towards your product—be it positive or negative.
+Sentiment analysis is a common task in Natural Language Processing that focuses on identifying and classifying opinions expressed in a piece of text. It's akin to teaching a computer to recognize various sentiments in written language. Imagine you're a business that receives thousands of social media comments and posts about your product every day. Sentiment analysis could involve training a machine learning model to process these social media interactions and determine the general sentiment towards your product—be it positive or negative.
 
 For this task, we'll use a sparse BERT model, which is a transformer model for the sentiment analysis task. The model was trained to classify text into 2 different sentiments: `positive` and `negative`. In addition, it also gives a score on how 'confident' the model is in its prediction.
 
@@ -101,4 +96,3 @@ deepsparse.server \
 ```
 
 output: `{"labels":["positive"],"scores":[0.9994332790374756]}`
-
