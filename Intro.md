@@ -13,7 +13,7 @@ As soon as you log in, you can use all of the DeepSparse features such as benchm
 
 DeepSparse enables developers of all experience levels to execute Deep Learning models for a diverse range of Natural Language Processing and Computer Vision tasks on CPUs.
 
-Let's quickly get started by running inference with the [DeepSparse Server](https://github.com/neuralmagic/deepsparse/blob/main/docs/user-guide/deepsparse-server.md). The Server runs on top of FastAPI/Uvicorn and has been optimized for executing machine learning inference and acts like any other server, where the user calls the server's REST APIs and it returns a prediction for the client.
+Let's start using the [DeepSparse Server](https://github.com/neuralmagic/deepsparse/blob/main/docs/user-guide/deepsparse-server.md) to make predictions. This server has been optimized to handle machine learning inference. You ask it to make a prediction by sending an API request, and it sends the prediction back to you.
 
 ### YOLOv8 for Image Detection
 
