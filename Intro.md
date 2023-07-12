@@ -62,20 +62,20 @@ def draw_boxes_on_image(image_path, url):
     cv2.imwrite('basilica_boxes.jpg', image)
 ```
 
-Let's call the function:
+**Step 4** Call the function
 
 ```
 draw_boxes_on_image("basilica.jpg", "http://0.0.0.0:5543/predict/from_files")
 ```
 
-Here are all the objects identified by the model found in the new `basilica_boxes.jpg`:
+Here are all the objects identified by the model found in the new `basilica_boxes.jpg` image:
 
 ![](./basilica_boxes.jpg)
 
 
 ### BERT for Sentiment Analysis
 
-Sentiment analysis is a common task in Natural Language Processing that focuses on identifying and classifying opinions expressed in a piece of text. It's akin to teaching a computer to "understand" and recognize various sentiments in written language. Imagine you're a business that receives thousands of social media comments and posts about your product every day. Sentiment analysis could involve training a machine learning model to process these social media interactions and determine the general sentiment towards your product—be it positive or negative. This allows companies to gain insights about consumer satisfaction, improve their products or services, and respond more effectively to their customers.
+Sentiment analysis is a common task in Natural Language Processing that focuses on identifying and classifying opinions expressed in a piece of text. It's akin to teaching a computer to "understand" and recognize various sentiments in written language. Imagine you're a business that receives thousands of social media comments and posts about your product every day. Sentiment analysis could involve training a machine learning model to process these social media interactions and determine the general sentiment towards your product—be it positive or negative.
 
 For this task, we'll use a sparse BERT model, which is a transformer model for the sentiment analysis task. The model was trained to classify text into 2 different sentiments: if it predicts `LABEL_0`; the sentiment is negative, and if `LABEL_1`; the sentiment is positive. In addition, it also gives a score on how 'confident' the model is in its prediction.
 
