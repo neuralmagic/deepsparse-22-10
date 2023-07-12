@@ -61,7 +61,7 @@ def draw_boxes_on_image(image_path, url):
         cv2.putText(image, f'{label}: {score:.2f}', (int(x1), int(y1) - 10), cv2.FONT_HERSHEY_SIMPLEX, 0.9, (36,255,12), 2)
 
     # Save the image
-    cv2.imwrite('basilica_boxes.jpg', image)
+    cv2.imwrite('./cars_boxes.jpg', image)
 ```
 
 **Step 4** Call the function and pass in the image and the Server's url:
@@ -70,9 +70,9 @@ def draw_boxes_on_image(image_path, url):
 draw_boxes_on_image("basilica.jpg", "http://0.0.0.0:5543/predict/from_files")
 ```
 
-Here are all the objects identified by the model found in the new `basilica_boxes.jpg` image:
+Here are all the objects identified by the model found in the new `cars_boxes.jpg` image:
 
-![](./basilica_boxes.jpg)
+![](./cars_boxes.jpg)
 
 
 ### BERT for Sentiment Analysis
