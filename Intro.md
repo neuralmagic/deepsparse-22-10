@@ -68,7 +68,7 @@ Let's call the function:
 draw_boxes_on_image("basilica.jpg", "http://0.0.0.0:5543/predict/from_files")
 ```
 
-Here are all the objects identified by the model:
+Here are all the objects identified by the model found in the new `basilica_boxes.jpg`:
 
 ![](./basilica_boxes.jpg)
 
