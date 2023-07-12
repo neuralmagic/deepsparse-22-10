@@ -62,7 +62,7 @@ def draw_boxes_on_image(image_path, url):
     cv2.imwrite('basilica_boxes.jpg', image)
 ```
 
-**Step 4** Call the function
+**Step 4** Call the function and pass in the image and the Server's API:
 
 ```
 draw_boxes_on_image("basilica.jpg", "http://0.0.0.0:5543/predict/from_files")
