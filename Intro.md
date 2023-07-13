@@ -29,9 +29,7 @@ endpoints:
   - task: yolov8
     model: zoo:cv/detection/yolov8-s/pytorch/ultralytics/coco/pruned50_quant-none
     kwargs:
-      class_names:
-        '0': person
-        '16': dog
+      class_names: "coco"
 ```
 
 **Step 2** Initialize the DeepSparse Server with the config file:
@@ -81,7 +79,7 @@ draw_boxes_on_image("human-dog.jpg", "human-dog-boxes.jpg", "http://0.0.0.0:5543
 
 Here are all the objects identified by the model found in the new `human-dog-boxes.jpg` image:
 
-![](./human-dog-boxes.jpg)
+![](https://github.com/neuralmagic/deepsparse/blob/main/docs/use-cases/cv/images/human-dog.jpg)
 
 
 ### BERT for Sentiment Analysis

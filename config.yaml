@@ -2,6 +2,4 @@ endpoints:
   - task: yolov8
     model: zoo:cv/detection/yolov8-s/pytorch/ultralytics/coco/pruned50_quant-none
     kwargs:
-      class_names:
-        '0': person
-        '16': dog
+      class_names: "coco"
