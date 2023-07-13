@@ -2,8 +2,6 @@
 
 This README highlights the dependencies and flow for building an image on the DigitalOcean marketplace.
 
-In particular the `intro.md`, `template.json`, `files/` and `scripts/`
-
 ## Installing Packages for App Creation
 
 To install `make` and `Packer` on Ubuntu, you can follow the steps below:
