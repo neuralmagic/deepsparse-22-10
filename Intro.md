@@ -66,7 +66,6 @@ def draw_boxes_on_image(image_path: str, output_path: str, url: str):
         cv2.rectangle(image, (int(x1), int(y1)), (int(x2), int(y2)), (0, 255, 0), 2)
         cv2.putText(image, f'{label}: {score:.2f}', (int(x1), int(y1) - 10), cv2.FONT_HERSHEY_SIMPLEX, 0.9, (36, 255, 12), 2)
 
-
     # Save the image
     cv2.imwrite(output_path, image)
 
