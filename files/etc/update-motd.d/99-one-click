@@ -15,6 +15,10 @@ cat <<EOF
 
 Welcome to DigitalOcean's 1-Click DeepSparse Droplet!
 
+DeepSparse enables developers of all experience levels to execute Deep Learning 
+models for a diverse range of Natural Language Processing and Computer Vision tasks 
+on CPUs.
+
 To keep this Droplet secure, the UFW firewall is enabled.
 All ports are BLOCKED except for 22 (SSH), 80 (HTTP), 443 (HTTPS) and 5543 (DeepSparse Server).
 
@@ -22,7 +26,7 @@ Review our documentation * https://docs.neuralmagic.com * to learn more about De
 
 For further support, join our Community Slack channel * https://discuss.neuralmagic.com * 
 For options on contract or Enterprise Support,  please reach out to Neural Magic Sales 
-( https://neuralmagic.com/deepsparse/#form ) with any questions.
+* https://neuralmagic.com/deepsparse/#form * with any questions.
 
 ********************************************************************************
 To delete this message of the day: rm -rf $(readlink -f ${0})

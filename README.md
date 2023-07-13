@@ -1,4 +1,8 @@
-**README for internal purposes only during testing.**
+# DeepSparse Image Repository for DigitalOcean's 1-Click App
+
+This README highlights the dependencies and flow for building an image on the DigitalOcean marketplace.
+
+In particular the `intro.md`, `template.json`, `files/` and `scripts/`
 
 ## Installing Packages for App Creation
 
