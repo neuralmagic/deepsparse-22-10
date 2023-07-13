@@ -1,5 +1,0 @@
-endpoints:
-  - task: yolov8
-    model: zoo:cv/detection/yolov8-s/pytorch/ultralytics/coco/pruned50_quant-none
-    kwargs:
-      class_names: "coco"

@@ -2,6 +2,9 @@
 
 This README highlights the dependencies and flow for building an image on the DigitalOcean marketplace.
 
+`Intro.md`: is the DigitalOcean Marketplace README
+``
+
 ## Installing Packages for App Creation
 
 To install `make` and `Packer` on Ubuntu, you can follow the steps below:
@@ -92,8 +95,8 @@ doctl auth init --access-token YOUR_API_TOKEN
 Install Repo
 
 ```bash
-git clone https://github.com/neuralmagic/deepsparse-22-10.git
-cd deepsparse-22-10
+git clone https://github.com/neuralmagic/deepsparse-digitalocean-image.git
+cd deepsparse-digitalocean-image
 ```
 Initialize DigitalOcean as a builder:
 
@@ -156,8 +159,7 @@ deepsparse.benchmark zoo:nlp/question_answering/bert-base/pytorch/huggingface/sq
 ```bash
 deepsparse.server \
     task image_classification \
-    --model_path "zoo:cv/classification/resnet_v1-50/pytorch/sparseml/imagenet/pruned95-none" \
-    --port 5543
+    --model_path "zoo:cv/classification/resnet_v1-50/pytorch/sparseml/imagenet/pruned95-none"
 ```
 
 After server is up and running pass in our droplet's IP address and default port number (5543) to the URL to check out swagger:
