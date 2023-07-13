@@ -16,13 +16,15 @@ cat <<EOF
 Welcome to DigitalOcean's 1-Click DeepSparse Droplet!
 
 DeepSparse enables developers of all experience levels to execute Deep Learning 
-models for a diverse range of Natural Language Processing and Computer Vision tasks 
-on CPUs.
+models for a diverse range of Natural Language Processing and Computer Vision 
+tasks on CPUs.
 
 To keep this Droplet secure, the UFW firewall is enabled.
-All ports are BLOCKED except for 22 (SSH), 80 (HTTP), 443 (HTTPS) and 5543 (DeepSparse Server).
+All ports are BLOCKED except for 22 (SSH), 80 (HTTP), 443 (HTTPS) and 
+5543 (DeepSparse Server).
 
-Review our documentation * https://docs.neuralmagic.com * to learn more about DeepSparse.
+Review our documentation * https://docs.neuralmagic.com * to learn more about 
+DeepSparse.
 
 For further support, join our Community Slack channel * https://discuss.neuralmagic.com * 
 For options on contract or Enterprise Support,  please reach out to Neural Magic Sales 
