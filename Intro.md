@@ -21,15 +21,26 @@ Image detection is a common task from Computer Vision that focuses on finding an
 
 For this task, we'll use a sparse YOLOv8, which is a state-of-the-art model for the image detection task.
 
-**Step 1** From your Droplet's terminal, initialize the DeepSparse Server with the YOLOv8 model:
 
-```bash
-deepsparse.server \
-  --task yolov8 \
-  --model_path zoo:cv/detection/yolov8-s/pytorch/ultralytics/coco/pruned50_quant-none
+**Step 1** From your Droplet's terminal, create a yaml file called `config.yaml` to configure the server. This file will select the YOLOv8 model and the labels the model expects to classify objects in images:
+
+```yaml
+endpoints:
+  - task: yolov8
+    model: zoo:cv/detection/yolov8-s/pytorch/ultralytics/coco/pruned50_quant-none
+    kwargs:
+      class_names:
+        '0': person
+        '16': dog
 ```
 
-**Step 2** From your local machine's terminal, download the image `human-dog.jpg` into your working directory:
+**Step 2** Initialize the DeepSparse Server with the config file:
+
+```bash
+deepsparse.server --config-file config.yaml
+```
+
+**Step 3** From your local machine's terminal, download the image `human-dog.jpg` into your working directory:
 
 ```bash
 wget -O human-dog.jpg <PATH TO ADD AFTER PR>
@@ -37,7 +48,7 @@ wget -O human-dog.jpg <PATH TO ADD AFTER PR>
 
 ![](./human-dog.jpg)
 
-**Step 3** On your local machine, use the Python `requests` library to make an API request to receive YOLOv8's inference on what it "sees" in the picture and then use the `opencv-python` library to draw objects in our image to know which objects it identified:
+**Step 4** On your local machine, use the Python `requests` library to make an API request to receive YOLOv8's inference on what it "sees" in the picture and then use the `opencv-python` library to draw objects in our image to know which objects it identified:
 
 ```python
 import requests
@@ -53,14 +64,17 @@ def draw_boxes_on_image(image_path: str, output_path: str, url: str):
     for box, score, label in zip(detections['boxes'][0], detections['scores'][0], detections['labels'][0]):
         x1, y1, x2, y2 = box
         cv2.rectangle(image, (int(x1), int(y1)), (int(x2), int(y2)), (0, 255, 0), 2)
-        cv2.putText(image, f'{int(float(label))}: {score:.2f}', (int(x1), int(y1) - 10), cv2.FONT_HERSHEY_SIMPLEX, 0.9, (36,255,12), 2)
+        cv2.putText(image, f'{label}: {score:.2f}', (int(x1), int(y1) - 10), cv2.FONT_HERSHEY_SIMPLEX, 0.9, (36, 255, 12), 2)
 
 
     # Save the image
     cv2.imwrite(output_path, image)
+
+# Use the function
+draw_boxes_on_image("human-dog.jpg", "human-dog-boxes.jpg", "http://0.0.0.0:5543/predict/from_files")
 ```
 
-**Step 4** Call the function and pass in the image path, boxes-image path and the Server's url:
+**Step 5** Call the function and pass in the image path, boxes-image path and the Server's url:
 
 ```
 draw_boxes_on_image("human-dog.jpg", "human-dog-boxes.jpg", "http://0.0.0.0:5543/predict/from_files")
