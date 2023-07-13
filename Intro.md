@@ -80,7 +80,7 @@ draw_boxes_on_image("human-dog.jpg", "human-dog-boxes.jpg", "http://0.0.0.0:5543
 draw_boxes_on_image("human-dog.jpg", "human-dog-boxes.jpg", "http://0.0.0.0:5543/predict/from_files")
 ```
 
-Here are all the objects identified by the model found in the new `cars_boxes.jpg` image:
+Here are all the objects identified by the model found in the new `human-dog-boxes.jpg` image:
 
 ![](./human-dog-boxes.jpg)
 
