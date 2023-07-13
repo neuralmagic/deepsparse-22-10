@@ -3,9 +3,13 @@
 This README highlights the dependencies and flow for building an image on the DigitalOcean marketplace.
 
 [Intro.md](https://github.com/neuralmagic/deepsparse-digitalocean-image/blob/main/Intro.md): is the DigitalOcean README currently found on NM's marketplace profile.
+
 [template.json](https://github.com/neuralmagic/deepsparse-digitalocean-image/blob/main/template.json): config file for configuring the droplet to build the image, Ubuntu installs/dependencies and which scripts are to be pushed into the image.
+
 [deepsparse.sh](https://github.com/neuralmagic/deepsparse-digitalocean-image/blob/main/scripts/deepsparse.sh): is the script for installing deepsparse.
+
 [99-one-click](https://github.com/neuralmagic/deepsparse-digitalocean-image/blob/main/files/etc/update-motd.d/99-one-click): is the script that for populating text when the Droplet boots up.
+
 [90-cleanup.sh](https://github.com/neuralmagic/deepsparse-digitalocean-image/blob/main/scripts/90-cleanup.sh) | [99-img-check.sh](https://github.com/neuralmagic/deepsparse-digitalocean-image/blob/main/scripts/99-img-check.sh): DO scripts used for image check and compliance.
 
 ## Installing Packages for App Creation
