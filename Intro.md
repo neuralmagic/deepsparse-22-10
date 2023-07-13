@@ -41,7 +41,7 @@ deepsparse.server --config-file config.yaml
 **Step 3** From your local machine's terminal, download the image `human-dog.jpg` into your working directory:
 
 ```bash
-wget -O human-dog.jpg <PATH TO ADD AFTER PR>
+wget -O human-dog.jpg https://raw.githubusercontent.com/neuralmagic/deepsparse/main/docs/use-cases/cv/images/human-dog.jpg
 ```
 
 ![](./human-dog.jpg)
@@ -79,7 +79,7 @@ draw_boxes_on_image("human-dog.jpg", "human-dog-boxes.jpg", "http://0.0.0.0:5543
 
 Here are all the objects identified by the model found in the new `human-dog-boxes.jpg` image:
 
-![](https://github.com/neuralmagic/deepsparse/blob/main/docs/use-cases/cv/images/human-dog.jpg)
+![](human-dog-boxes.jpg)
 
 
 ### BERT for Sentiment Analysis
